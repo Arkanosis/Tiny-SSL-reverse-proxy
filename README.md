@@ -1,4 +1,4 @@
-# Tiny SSL reverse proxy
+# Tiny SSL reverse proxy [![Version](https://img.shields.io/badge/version-v0.1.0-orange.svg)](https://semver.org/spec/v2.0.0.html) [![License](http://img.shields.io/badge/license-ISC-blue.svg)](/LICENSE)
 
 *Tiny SSL reverse proxy* creates a SSL reverse proxy to wrap your HTTP services in HTTPS.
 
@@ -6,11 +6,21 @@ This is not secure at all (it doesn't even try to be) and should only be used fo
 
 ## Usage
 
-Run:
+```console
+Usage: ssl-reverse-proxy
+       ssl-reverse-proxy -h | --help
+       ssl-reverse-proxy --version
+
+Options:
+    -h, --help  Show this screen.
+    --version   Show version.
+```
+
+In othe words, just run:
 
     ./ssl-reverse-proxy
 
-That's it. You don't even need to be root.
+And that's it. You don't even need to be root.
 
 ## Notes
 
