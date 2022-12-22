@@ -1,4 +1,4 @@
-# Tiny SSL reverse proxy [![Version](https://img.shields.io/badge/version-v0.1.0-orange.svg)](https://semver.org/spec/v2.0.0.html) [![License](http://img.shields.io/badge/license-ISC-blue.svg)](/LICENSE)
+# Tiny SSL reverse proxy [![Version](https://img.shields.io/badge/version-v0.1.1-orange.svg)](https://semver.org/spec/v2.0.0.html) [![License](http://img.shields.io/badge/license-ISC-blue.svg)](/LICENSE)
 
 *Tiny SSL reverse proxy* creates a SSL reverse proxy to wrap your HTTP services in HTTPS.
 
@@ -32,4 +32,4 @@ Don't worry: that's because nginx (on which Tiny SSL reverse proxy is based) is 
 
 ## License
 
-Tiny SSL reverse proxy is copyright (C) 2018 Jérémie Roquet <jroquet@arkanosis.net> and licensed under the ISC license.
+Tiny SSL reverse proxy is copyright (C) 2018-2022 Jérémie Roquet <jroquet@arkanosis.net> and licensed under the ISC license.

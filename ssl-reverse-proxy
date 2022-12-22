@@ -1,6 +1,6 @@
 #! /bin/sh
 
-VERSION='v0.1.0'
+VERSION='v0.1.1'
 
 usage() {
     cat <<EOF
@@ -20,14 +20,14 @@ elif [ "x$1" = 'x--version' ]; then
     echo "ssl-reverse-proxy $VERSION"
 else
     ( test -x nginx || ( \
-	INSTALL=$(realpath $(dirname "$0")) && \
-	DIR=$(mktemp -d) && \
+	INSTALL="$(realpath "$(dirname "$0")")" && \
+	DIR="$(mktemp -d)" && \
 	cd "$DIR" && \
-	wget 'http://security.ubuntu.com/ubuntu/pool/universe/n/nginx/nginx-light_1.10.3-0ubuntu0.16.04.2_amd64.deb' -O nginx.deb && \
-	sha256sum nginx.deb | grep -Fw '2c27553ba10ef8ab773d9519bc8395147dcddebda5f079015ec938b9f96e34c2' && \
+	wget 'http://ftp.us.debian.org/debian/pool/main/n/nginx/nginx-light_1.18.0-6.1+deb11u3_amd64.deb' -O nginx.deb && \
+	sha256sum nginx.deb | grep -Fw 'e39eaad5a7779c5971ed923a6413da94a5094b97481bfedb96d7330a9d56b123' && \
 	dpkg-deb -x nginx.deb root && \
 	mv root/usr/sbin/nginx "$INSTALL" \
     ) ) && \
 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/nginx-ssl.key -out /tmp/nginx-ssl.crt -subj "/C=IO/ST=Home/L=Localhost/O=User/CN=localhost" &&
-	./nginx -c $(realpath nginx.conf)
+	./nginx -c "$(realpath nginx.conf)"
 fi
